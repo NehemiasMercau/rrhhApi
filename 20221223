@@ -1,0 +1,27 @@
+2022-12-23 12:23:35.289 -03:00 [INF] Now listening on: http://localhost:5029
+2022-12-23 12:23:35.338 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-12-23 12:23:35.339 -03:00 [INF] Hosting environment: Development
+2022-12-23 12:23:35.339 -03:00 [INF] Content root path: C:\Users\Nehemias\nehe-repo\core\rrhhApi
+2022-12-23 12:23:50.343 -03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5029/api/Candidato application/json 293
+2022-12-23 12:23:50.394 -03:00 [WRN] Failed to determine the https port for redirect.
+2022-12-23 12:23:50.399 -03:00 [INF] Executing endpoint 'rrhhApi.Controllers.CandidatoController.PostCandidato (rrhhApi)'
+2022-12-23 12:23:50.427 -03:00 [INF] Route matched with {action = "PostCandidato", controller = "Candidato"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[rrhhApi.Models.Candidato]] PostCandidato(rrhhApi.Models.Candidato) on controller rrhhApi.Controllers.CandidatoController (rrhhApi).
+2022-12-23 12:23:51.519 -03:00 [WRN] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2022-12-23 12:23:52.759 -03:00 [INF] Executed DbCommand (52ms) [Parameters=[@p0='string' (Size = 4000), @p1='string' (Size = 4000), @p2='2022-12-23T00:00:00.0000000', @p3='string' (Size = 4000), @p4='0'], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Candidatos] ([Apellido], [Email], [FechaNacimiento], [Nombre], [Telefono])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2022-12-23 12:23:52.813 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[@p5='8', @p6='2022-12-23T00:00:00.0000000', @p7='2022-12-23T00:00:00.0000000', @p8='string' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Empleos] ([CandidatoId], [Desde], [Hasta], [NombreEmpresa])
+OUTPUT INSERTED.[Id]
+VALUES (@p5, @p6, @p7, @p8);
+2022-12-23 12:23:52.839 -03:00 [INF] POSTcandidato
+2022-12-23 12:23:52.849 -03:00 [INF] Executing CreatedAtActionResult, writing value of type 'rrhhApi.Models.Candidato'.
+2022-12-23 12:23:52.887 -03:00 [INF] Executed action rrhhApi.Controllers.CandidatoController.PostCandidato (rrhhApi) in 2454.9696ms
+2022-12-23 12:23:52.888 -03:00 [INF] Executed endpoint 'rrhhApi.Controllers.CandidatoController.PostCandidato (rrhhApi)'
+2022-12-23 12:23:52.899 -03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5029/api/Candidato application/json 293 - 201 - application/json;+charset=utf-8 2558.2323ms
+2022-12-23 12:25:15.719 -03:00 [INF] Application is shutting down...
