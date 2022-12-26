@@ -37,7 +37,7 @@ CREATE INDEX [IX_Empleos_CandidatoId] ON [Empleos] ([CandidatoId]);
 GO
 
 INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-VALUES (N'20221221223523_InitialCreate', N'7.0.1');
+VALUES (N'20221226160327_InitialCreate', N'7.0.1');
 GO
 
 COMMIT;

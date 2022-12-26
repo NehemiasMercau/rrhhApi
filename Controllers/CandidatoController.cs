@@ -16,10 +16,13 @@ namespace rrhhApi.Controllers
     public class CandidatoController : ControllerBase
     {
         private readonly RRHHContext _context;
+        private readonly ILogger<CandidatoController> _logger;
 
-        public CandidatoController(RRHHContext context)
+
+        public CandidatoController(RRHHContext context, ILogger<CandidatoController> logger)
         {
             _context = context;
+            _logger = logger;
         }
 
         // GET: api/Candidato
@@ -36,7 +39,7 @@ namespace rrhhApi.Controllers
             {
                 return NotFound();
             }
-            Log.Information("Método GET: listado de candidatos con sus empleos");
+            _logger.LogInformation("Método GET: listado de candidatos con sus empleos");
             return await _context.Candidatos.Include(x => x.Empleos).ToListAsync();
         }
 
@@ -55,7 +58,7 @@ namespace rrhhApi.Controllers
                 return NotFound();
             }
 
-            Log.Information("Método GET: Obtiene un candidato a través de su id");
+            _logger.LogInformation("Método GET: Obtiene un candidato a través de su id");
             return candidato;
         }
 

@@ -8,6 +8,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Utilizo Serilog para guardar información de logs en un archivo externo
 builder.Host.UseSerilog();
+// builder.Host.UseSerilog((ctx, lc) => lc
+//     .WriteTo.Console(outputTemplate: "{Level:w4}: {SourceContext}[0] {NewLine}      {Message:lj}{Exception}{NewLine}"));
+
+// builder.Host.UseSerilog((hostingContext, loggerConfiguration) =>
+//                     loggerConfiguration.ReadFrom.Configuration(hostingContext.Configuration));
 
 builder.Services.AddControllers();
 
@@ -36,6 +41,7 @@ builder.Services.AddSwaggerGen(options =>
 
 //Logs con Serilog, en un archivo que en este caso se encuentra en la raíz del proyecto, pero podría ir en la URL que se asigne al File()
 Log.Logger = new LoggerConfiguration().WriteTo.File("./", rollingInterval: RollingInterval.Day).CreateLogger();
+// Log.Logger = new LoggerConfiguration().CreateLogger();
 
 var app = builder.Build();
 

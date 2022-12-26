@@ -1,4 +1,0 @@
-1- endpoint para listar los candidatos con sus empleos (candidatos). GET
-2- endpoint para crear un candidato junto con a sus empleos (empleado). POST
-3- endpoint para modificar un candidato (empleado). PUT
-4- endpoint para eliminar un candidato. DELETE

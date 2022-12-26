@@ -13,5 +13,5 @@ public class Candidato
     public DateTime FechaNacimiento { get; set; }
     public string? Email { get; set; }
     public long Telefono { get; set; }
-    public List<Empleo> Empleos { get; set; }
+    public List<Empleo>? Empleos { get; set; }
 }

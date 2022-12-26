@@ -12,7 +12,7 @@ using rrhhApi.Models;
 namespace rrhhApi.Migrations
 {
     [DbContext(typeof(RRHHContext))]
-    [Migration("20221221223523_InitialCreate")]
+    [Migration("20221226160327_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
